@@ -1,0 +1,29 @@
+{
+    "name": "framgia_book_store",
+    "description": "",
+    "main": "",
+    "authors": [
+        "grassme <lanh.ptit.tn@gmail.com>"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/grassme/framgia_book_store",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "public/assets/",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "jquery": "^3.2.1",
+        "animate.css": "^3.5.2",
+        "font-awesome": "https://github.com/FortAwesome/Font-Awesome.git#^4.7.0",
+        "prettyphoto": "https://github.com/scaron/prettyphoto.git#^3.1.6",
+        "scrollup": "https://github.com/markgoodyear/scrollup.git#^2.4.1",
+        "gmaps": "http://hpneo.github.com/gmaps/",
+        "price-range": "https://github.com/grassme/price-range.git"
+    }
+}
