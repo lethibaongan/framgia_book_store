@@ -1,0 +1,23 @@
+<?php
+return [
+    'admin' => 'Admin',
+    'Welcome' => 'Welcome',
+    'home' => 'Home',
+    'manage_user' => 'Manage Users',
+    'view_list_user' => 'Approve List Users',
+    'manage_slides' => 'Manage Slides',
+    'view_list_slide' => 'View List Slides',
+    'add_slide' => 'Add a new Slide',
+    'manage_book' => 'Manage Books',
+    'view_list_book' => 'View List Books',
+    'add_book' => 'Add a new Books',
+    'manage_cate' => 'Manage Categories',
+    'view_list_cate' => 'View List Categories',
+    'add_cate'=> 'Add a new Category',
+    'manage_order' => 'Manage List Orders',
+    'approve_order' => 'Approve List Orders',
+    'statistic' => 'Statistic',
+    'daily' => 'Daily Revenue Statistics',
+    'panel' => 'Admin Panel',
+    'list_book_title' => 'List Books',
+];

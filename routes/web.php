@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+	Route::resource('list-books', 'BookController');
+});

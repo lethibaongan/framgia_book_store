@@ -7,14 +7,13 @@ use App\Models;
 
 class Author extends Model
 {
-    //
     protected $fillable = [
         'name',
         'date_of_birth',
         'description',
     ];
 
-    public function book()
+    public function books()
     {
         return $this->hasMany(Book::class);
     }

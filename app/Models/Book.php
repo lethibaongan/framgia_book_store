@@ -7,7 +7,6 @@ use App\Models;
 
 class Book extends Model
 {
-    //
     use SoftDeletes;
 
     protected $fillable[
@@ -24,17 +23,17 @@ class Book extends Model
     	'total_people_rate',
     ];
 
-    public function cateOfBook()
+    public function cateOfBooks()
     {
     	return $this->hasMany(CateOfBook::class);
     }
 
-    public function orderBook()
+    public function orderBooks()
     {
     	return $this->hasMany(OrderBook::class);
     }
 
-    public function review()
+    public function reviews()
     {
     	return $this->hasMany(Review::class);
     }
