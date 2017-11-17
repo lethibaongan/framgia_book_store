@@ -7,7 +7,6 @@ use App\Models;
 
 class CateOfBook extends Model
 {
-    //
     protected $fillable = [
     	'book_id',
     	'cate_id',

@@ -7,7 +7,6 @@ use App\Models;
 
 class Event extends Model
 {
-    //
     use SoftDeletes;
 
     protected $fillable = [
@@ -17,7 +16,7 @@ class Event extends Model
     	'end_date',
     ];
 
-    public function discount()
+    public function discounts()
     {
     	return $this->hasMany(Models::class);
     }

@@ -7,7 +7,6 @@ use App\Models;
 
 class Order extends Model
 {
-    //
     protected $fillable = [
     	'user_id',
     	'receive_address',
@@ -21,7 +20,7 @@ class Order extends Model
     	return $this->belongsTo(User::class);
     }
 
-    public function orderBook()
+    public function orderBooks()
     {
     	return $this->hasMany(OrderBook::class);
     }

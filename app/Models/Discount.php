@@ -7,7 +7,6 @@ use App\Models;
 
 class Discount extends Model
 {
-    //
     use SoftDeletes;
 
     protected $fillable = [
@@ -17,7 +16,7 @@ class Discount extends Model
     	'end_date',
     ];
 
-    public function book()
+    public function books()
     {
     	return $this->hasMany(Book::class);
     }

@@ -7,7 +7,6 @@ use App\Models;
 
 class Review extends Model
 {
-    //
     protected $fillale = [
     	'name',
     	'description',

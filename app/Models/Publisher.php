@@ -7,13 +7,12 @@ use App\Models
 
 class Publisher extends Model
 {
-    //
     protected $fillable = [
     	'name',
     	'description',
     ];
 
-    public function book()
+    public function books()
     {
     	return $this->hasMany(Book::class);
     }
