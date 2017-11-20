@@ -53,4 +53,6 @@ return [
     'Copyright2013' => 'Copyright © 2013 Lanh Ngan Inc. All rights reserved.',
     'Designed' => 'Designed by',
     'Designed_name' => 'Huyen Lanh',
+    'login_success' => 'You are logged in!',
+    'dashboard' => 'Dashboard',
 ];

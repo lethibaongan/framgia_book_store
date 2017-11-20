@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
 	Route::resource('list-books', 'BookController');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

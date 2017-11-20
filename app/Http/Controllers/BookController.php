@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
+use Auth;
 
 class BookController extends Controller
 {
@@ -13,7 +15,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('admin.listbook');
+        $data['listBook'] = Book::with(['author:id,name', 'publisher:id,name'])->paginate(10);
+        
+        return view('admin.listbook', $data);
     }
 
     /**
