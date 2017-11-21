@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models;
 
 class Book extends Model
 {
     use SoftDeletes;
 
-    protected $fillable[
+    protected $fillable = [
     	'name',
     	'author_id',
     	'publisher_id',
@@ -51,5 +52,15 @@ class Book extends Model
     public function discount()
     {
     	return $this->belongsTo(Discount::class);
+    }
+
+    public function scopeListnewbook($query)
+    {
+        return $query->orderBy('id', 'desc');
+    }
+
+    public function getImagePathAttribute()
+    {
+        return config('index.link.image_home_folder').$this->image;
     }
 }
