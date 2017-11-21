@@ -20,7 +20,10 @@
 
     <!-- Custom Theme Style -->
     {{ Html::style('css/custom.min.css') }}
-    @yield('css') 
+    <!-- My Style -->
+    {{ Html::style('css/mystyle.css') }}
+    @yield('css')
+    @yield('script_header')
   </head>
 
   <body class="nav-md">
@@ -66,7 +69,7 @@
                       <li><a href="#">{{ trans('admin.add_slide') }}</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-book"></i> {{ trans('manage_book') }} <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-book"></i> {{ trans('admin.manage_book') }} <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">{{ trans('admin.view_list_book') }}</a></li>
                       <li><a href="#">{{ trans('admin.add_book') }}</a></li>
@@ -204,6 +207,14 @@
         	@yield('page-content')
         </div>
         <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
       </div>
     </div>
 

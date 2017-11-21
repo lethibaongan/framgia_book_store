@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models;
 
 class Book extends Model
 {
     use SoftDeletes;
 
-    protected $fillable[
+    protected $fillable = [
     	'name',
     	'author_id',
     	'publisher_id',
@@ -22,6 +23,8 @@ class Book extends Model
     	'avg_rate',
     	'total_people_rate',
     ];
+
+    protected $dates = ['deleted_at'];
 
     public function cateOfBooks()
     {
