@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/newbooks', 'HomeController@show_new_book')->name('newbooks');
 
 Route::group(['prefix' => 'admin'], function () {
 	Route::resource('list-books', 'BookController');

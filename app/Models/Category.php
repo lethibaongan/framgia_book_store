@@ -8,11 +8,16 @@ use App\Models;
 class Category extends Model
 {
     protected $fillable = [
-    	'name',
-    	'description',
+        'name',
+        'description',
     ];
 
     public function cateOfBooks(){
-    	return $this->hasMany(CateOfBook::class);
+        return $this->hasMany(CateOfBook::class);
+    }
+
+    public function scopeListcategory($query)
+    {
+        return $query->get();
     }
 }
