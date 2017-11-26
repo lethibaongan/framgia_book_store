@@ -56,7 +56,7 @@ class Book extends Model
     	return $this->belongsTo(Discount::class);
     }
 
-    public function scopeListnewbook($query)
+    public function scopeListNewBooks($query)
     {
         return $query->orderBy('id', 'desc');
     }
@@ -64,5 +64,9 @@ class Book extends Model
     public function getImagePathAttribute()
     {
         return config('index.link.image_home_folder').$this->image;
+    }
+
+    public  function scopeSearch($query, $field, $value){
+        return $query->where($field, 'LIKE', "%$value%");
     }
 }

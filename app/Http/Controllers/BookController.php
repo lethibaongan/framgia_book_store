@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use Auth;
+use App\Models\Category;
+use App\Models\Publisher;
+use App\Models\Author;
 
 class BookController extends Controller
 {
@@ -84,5 +87,16 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $data['categories'] = Category::listCategories();
+        $data['publishers'] = Publisher::listPublishers();
+        $data['authors'] = Author::listAuthors();
+        $key = $request->key_word;
+        $data['books'] = Book::search('name', $key)->get();   
+
+        return view('search_result', $data);
     }
 }

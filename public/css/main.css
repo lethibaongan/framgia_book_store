@@ -2044,3 +2044,15 @@ textarea {
 .contact-info .social-networks ul li a:hover {
     color: #FE980F;
 }
+
+/*Search CSS*/
+.section-search-form {
+    margin-bottom: 20px;
+}
+.section-search-form .search-form .input {
+    padding: 5px;
+    font-size: 18px;
+}
+.section-search-form .search-form .button {
+    padding: 8px;
+} /*end - search css*/

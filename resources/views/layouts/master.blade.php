@@ -124,9 +124,12 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
+                            <form method="GET" action="{{ route('search') }}">
+                                {{ csrf_field() }}
+                                <div class="search_box pull-right">
+                                    <input name="key_word" type="text" placeholder="{{ trans('index.search_book') }}" />
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
