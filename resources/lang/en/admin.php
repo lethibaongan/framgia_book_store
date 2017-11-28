@@ -44,4 +44,8 @@ return [
     'register' => 'Register',
     'logout' => 'Logout',
     'stt' => 'STT',
+    'register' => 'Register',
+    'logout' => 'Logout',
+    'stt' => 'STT',
+    'web_name' => 'LaNa Book',
 ];

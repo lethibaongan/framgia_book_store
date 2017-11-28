@@ -16,13 +16,9 @@ class CheckAdminPermison
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() != config('customer.user.login') {
-            return redirect(url('login'));
-        }
-        
         if( Auth::user()->permison != config('customer.user.permison'))
-            return redirect(url('home'));
-        else
-            return $next($request);
+            return redirect()->route('home');
+
+        return $next($request);
     }
 }
