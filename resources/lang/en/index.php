@@ -1,9 +1,10 @@
 <?php
 return [
+    'search_result' => 'Search result',
     'new_items' => 'New books',
     'add_to_cart' => 'Add to cart',
     'add_to_wishlist' => 'Add to wishlist',
-    'add_to_compare' => 'Add to compare',
+    'add_to_compare' => 'Read more',
     'Category' => 'Category',
     'publisher' => 'publisher',
     'PriceRange' => 'Price Range',
@@ -16,4 +17,6 @@ return [
     'slide1_des' => 'Hàng ngàn các chủ đề thú vị phù hợp cho từng lứa tuổi. Mở ra một thế giới rộng hơn cho các trẻ thơ.',
     'slide2_des' => 'Đem đến cho những người đã, đang và sẽ trở thành cha mẹ những điều từ sơ đẳng  để chăm sóc và nuôi dạy con thật tốt.',
     'slide3_des' => 'Kỹ năng sống là những điều mà bạn bất kì một ai cũng cần có để luôn có một cuộc sống ý nghĩa và nhiều thú vị',
+    'search_book' => 'Search book',
+    'enter_name_book' => 'Enter name book',
 ];

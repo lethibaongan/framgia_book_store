@@ -16,7 +16,7 @@ class Category extends Model
         return $this->hasMany(CateOfBook::class);
     }
 
-    public function scopeListcategory($query)
+    public function scopeListCategories($query)
     {
         return $query->get();
     }

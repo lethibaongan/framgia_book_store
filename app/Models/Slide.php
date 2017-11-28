@@ -14,7 +14,7 @@ class Slide extends Model
         'status'
     ];
 
-    public function scopeListslide($query)
+    public function scopeListSlides($query)
     {
         return $query->where('status', config('index.status.slide_active'));
     }

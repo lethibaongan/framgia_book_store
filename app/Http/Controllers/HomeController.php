@@ -7,28 +7,29 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Publisher;
 use App\Models\Slide;
+use App\Models\Author;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index() 
     {
-        $data['book'] = Book::listnewbook()->limit(config('index.number.number_newbook_index'))->get();
-
-        
-        $data['category'] = Category::listcategory();
-        $data['publisher'] = Publisher::listpublisher();
-        $data['slide'] = Slide::listslide()->get();
+        $data['books'] = Book::listNewBooks()->limit(config('index.number.number_newbook_index'))->get();
+        $data['slides'] = Slide::listSlides()->get();
+        $data['categories'] = Category::listCategories();
+        $data['publishers'] = Publisher::listPublishers();
+        $data['authors'] = Author::listAuthors();
 
         return view('index', $data);
     }
 
-    public function show_new_book()
+    public function showNewbook()
     {
-        $data['new_book'] = Book::listnewbook()->limit(config('index.number.number_newbook'))->get();
-        $data['category'] = Category::listcategory();
-        $data['publisher'] = Publisher::listpublisher();
-        
+        $data['newBooks'] = Book::listNewBooks()->limit(config('index.number.number_newbook'))->get();
+        $data['categories'] = Category::listCategories();
+        $data['publishers'] = Publisher::listPublishers();
+        $data['authors'] = Author::listAuthors();
+
         return view('newbooks', $data);
     }
 }

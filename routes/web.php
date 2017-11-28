@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/newbooks', 'HomeController@show_new_book')->name('newbooks');
+Route::get('/newbooks', 'HomeController@showNewbook')->name('newbooks');
+Route::get('search/', 'BookController@search')->name('search');
+
 
 Route::group(['prefix' => 'admin'], function () {
 	Route::resource('list-books', 'BookController');

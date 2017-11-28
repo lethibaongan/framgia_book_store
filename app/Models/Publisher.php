@@ -17,7 +17,7 @@ class Publisher extends Model
         return $this->hasMany(Book::class);
     }
 
-    public function scopeListpublisher($query)
+    public function scopeListPublishers($query)
     {
         return $query->get();
     }
