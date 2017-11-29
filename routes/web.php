@@ -13,8 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/newbooks', 'HomeController@showNewbook')->name('newbooks');
-Route::get('search/', 'BookController@search')->name('search');
-
+Route::get('search/', 'BookController@searchByName')->name('search');
+Route::get('category/{id?}', 'BookController@searchCategory')->name('category');
+Route::get('publishser/{id?}', 'BookController@searchPublisher')->name('publisher');
+Route::get('author/{id?}', 'BookController@searchAuthor')->name('author');
 
 Route::group(['prefix' => 'admin'], function () {
 	Route::resource('list-books', 'BookController');

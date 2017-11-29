@@ -20,4 +20,9 @@ class Category extends Model
     {
         return $query->get();
     }
+
+    public function books()
+    {
+        return $this->belongsToMany(Book::class, 'cates_of_books', 'cate_id', 'book_id');
+    }
 }

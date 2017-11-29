@@ -1,5 +1,6 @@
 <?php
 return [
+    'author' => 'Author',
     'search_result' => 'Search result',
     'new_items' => 'New books',
     'add_to_cart' => 'Add to cart',

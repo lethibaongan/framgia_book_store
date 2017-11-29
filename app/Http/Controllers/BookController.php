@@ -8,6 +8,7 @@ use Auth;
 use App\Models\Category;
 use App\Models\Publisher;
 use App\Models\Author;
+use App\Models\CategoryOfBook;
 
 class BookController extends Controller
 {
@@ -89,13 +90,44 @@ class BookController extends Controller
         //
     }
 
-    public function search(Request $request)
+    public function searchByName(Request $request)
     {
         $data['categories'] = Category::listCategories();
         $data['publishers'] = Publisher::listPublishers();
         $data['authors'] = Author::listAuthors();
         $key = $request->key_word;
         $data['books'] = Book::search('name', $key)->get();   
+
+        return view('search_result', $data);
+    }
+
+    public function searchCategory($idCategorie)
+    {
+        $data['categories'] = Category::listCategories();
+        $data['publishers'] = Publisher::listPublishers();
+        $data['authors'] = Author::listAuthors();
+        $data['books'] = Category::with(['books'])->where('id', $idCategorie)->first();
+        $data['books'] = $data['books']->books;
+
+        return view('search_result', $data);
+    }
+
+    public function searchPublisher($idPublisher)
+    {
+        $data['categories'] = Category::listCategories();
+        $data['publishers'] = Publisher::listPublishers();
+        $data['authors'] = Author::listAuthors();
+        $data['books'] = Book::listBookSearch('publisher_id', $idPublisher)->get();
+
+        return view('search_result', $data);
+    }
+
+    public function searchAuthor($idAuthor)
+    {
+        $data['categories'] = Category::listCategories();
+        $data['publishers'] = Publisher::listPublishers();
+        $data['authors'] = Author::listAuthors();
+        $data['books'] = Book::listBookSearch('author_id', $idAuthor)->get();
 
         return view('search_result', $data);
     }

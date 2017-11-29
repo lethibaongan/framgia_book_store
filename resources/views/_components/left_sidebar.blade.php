@@ -5,7 +5,7 @@
         @foreach($categories as $category)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title"><a href="#">{{ $category->name }}</a></h4>
+                    <h4 class="panel-title"><a href="{{ route('category', ['id' => $category->id]) }}">{{ $category->name }}</a></h4>
                 </div>
             </div>
         @endforeach
@@ -17,7 +17,7 @@
         <div class="brands-name">
             <ul class="nav nav-pills nav-stacked">
                 @foreach($publishers as $publisher)
-                    <li><a href="#">{{ $publisher->name }}</a></li>
+                    <li><a href="{{ route('publisher', ['id' => $publisher->id]) }}">{{ $publisher->name }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -28,7 +28,7 @@
         @foreach($authors as $author)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title"><a href="#">{{ $author->name }}</a></h4>
+                    <h4 class="panel-title"><a href="{{ route('author', ['id' => $author->id]) }}">{{ $author->name }}</a></h4>
                 </div>
             </div>
         @endforeach
