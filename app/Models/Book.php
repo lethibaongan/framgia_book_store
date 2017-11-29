@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models;
+use App\Models\CategoryOfBook;
 
 class Book extends Model
 {
@@ -66,7 +67,17 @@ class Book extends Model
         return config('index.link.image_home_folder').$this->image;
     }
 
-    public  function scopeSearch($query, $field, $value){
+    public function scopeSearch($query, $field, $value){
         return $query->where($field, 'LIKE', "%$value%");
+    }
+
+    public function scopeListBookSearch($query, $field, $id) 
+    {
+        return $query->where($field, '=', $id);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'cates_of_books', 'book_id', 'cate_id');
     }
 }
