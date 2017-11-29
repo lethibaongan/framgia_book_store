@@ -14,11 +14,10 @@
 Route::get('/', 'HomeController@index');
 Route::get('/newbooks', 'HomeController@show_new_book')->name('newbooks');
 
-Route::group(['prefix' => 'admin'], function () {
-	Route::resource('list-books', 'BookController');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'checkadmin']], function () {
+    Route::resource('list-books', 'BookController');
 });
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
