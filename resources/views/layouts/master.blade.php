@@ -57,8 +57,8 @@
                             <div class="btn-group pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    {{ trans('master.USA') }}
-                                    <span class="caret"></span>
+                                        {{ trans('master.USA') }}
+                                        <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="#"> {{ trans('master.USA_Canada') }} </a></li>
@@ -67,8 +67,8 @@
                                 </div>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    {{ trans('master.DOLLAR') }} 
-                                    <span class="caret"></span>
+                                        {{ trans('master.DOLLAR') }} 
+                                        <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="#"> {{ trans('master.DOLLAR_Canadian') }} </a></li>

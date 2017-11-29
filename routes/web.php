@@ -18,11 +18,18 @@ Route::get('category/{id?}', 'BookController@searchCategory')->name('category');
 Route::get('publishser/{id?}', 'BookController@searchPublisher')->name('publisher');
 Route::get('author/{id?}', 'BookController@searchAuthor')->name('author');
 
-Route::group(['prefix' => 'admin'], function () {
-	Route::resource('list-books', 'BookController');
-});
-
 Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'checkadmin']], function () {
+    Route::resource('list-books', 'BookController');
+    Route::resource('slide', 'SlideController', ['names' => [
+        'index' => 'admin.slide.index',
+        'create' => 'admin.slide.create',
+        'store' => 'admin.slide.store',
+        'edit' => 'admin.slide.edit',
+        'update' => 'admin.slide.update',
+        'destroy' => 'admin.slide.destroy',
+    ]]);
+});

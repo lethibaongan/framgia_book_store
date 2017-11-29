@@ -6,7 +6,11 @@ return [
         'permison' => 1
     ],
 
-    'link' => [
-    	'book_image' => 'images/admin/products/',
+    'show' => 1,
+
+    'image_path' => [
+        'slides' => 'images/slides/',
     ],
+
+    'page' => 10,
 ];

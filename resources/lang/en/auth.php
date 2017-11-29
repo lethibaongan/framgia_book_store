@@ -32,5 +32,4 @@ return [
     'email_reset' => 'E-Mail Address',
     'send_reset' => 'Send Password Reset Link',
     'confirm' => 'Confirm Password',
-
 ];

@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
+    @yield('script')
     <style type="text/css">
         #logout-form{
             display: none;
